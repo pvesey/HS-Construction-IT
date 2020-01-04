@@ -5,3 +5,5 @@
 5) Conditions And Loops
 6) User Defined Functions
 7) User Defined Modules
+8) File Operations - read write
+9) Excel Read-Write
