@@ -6,4 +6,4 @@ answer = x + y
 
 print(x, y, (x+y), answer)
 
-print('The calulated answer is:', answer)
+print('The calculated answer is:', answer)
