@@ -38,7 +38,6 @@ Write-Host 'HomeDir Cleanout'
 
 # Compile Latex Files
 
-
 pdflatex $Assignment1.Spec
 Remove-Item ($Assignment1.Name + '.aux')
 Remove-Item ($Assignment1.Name + '.log')
@@ -51,24 +50,19 @@ Remove-Item ($Assignment2.Name + '.log')
 Remove-Item ($Assignment2.Name + '.out')
 Move-Item -Path ($Assignment2.Name + '.pdf') -Destination ($Assignment2.HomeDir + $Assignment2.Name + '.pdf') -Force
 
-
 #pdflatex $Assignment3.Spec
 #Remove-Item ($Assignment3.Name + '.aux')
 #Remove-Item ($Assignment3.Name + '.log')
 #Remove-Item ($Assignment3.Name + '.out')
 #Move-Item -Path ($Assignment3.Name + '.pdf') -Destination ($Assignment3.HomeDir + $Assignment3.Name + '.pdf') -Force
 
-
 Remove-Item $Assignment1.Archive
 Remove-Item $Assignment2.Archive
 #Remove-Item $Assignment3.Archive
 
-
 Compress-Archive $Assignment1.HomeDir $Assignment1.Archive -Update
 Compress-Archive $Assignment2.HomeDir $Assignment2.Archive -Update
 #Compress-Archive $Assignment3.HomeDir $Assignment3.Archive -Update
-
-
 
 Write-Host -NoNewLine 'Script Complete: Press any key to continue...';
 $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
