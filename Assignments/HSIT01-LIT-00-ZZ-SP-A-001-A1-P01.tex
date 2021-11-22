@@ -1,82 +1,76 @@
-\input{./Assignments/HeadMatter.tex}
+\input{./HeadMatter.tex}
 	
-\part*{Assignment 1 (25\%) - Microsoft Forms}
+\part*{Assignment 1 (33\%) - Python with Excel}
 
 \begin{tabularx}{\textwidth}{ |X|X| }
 	\hline
-	\textbf{Issue Date:} & As stated on Moodle \\
+	\textbf{Issue Date:} & 28$^{th}$ October 2021 \\
 	\hline 
-	\textbf{Submission Date:}  & As stated on Moodle  \\
+	\textbf{Submission Date:}  & 27$^{th}$ November 2021  \\
 	\hline
 \end{tabularx}
 
 
-\section*{Assignment Outline}
-
-
-In this assignment you will create an on-line survey to capture the prestart checks undertaken by a site dumper operator.  The platform for the on-line survey is to be Microsoft Forms, which is available through your Office 365 Student Subscription.
+\section*{Continuous Assessment}
+This assignment will account for 33\% of the 100\% allocated for continuous assessment in this module under COVID-19 regulations
 
 
 \section*{Background Information}
 
-The HSA has a published document for Site Dumper Prestart checks.  This document is available in the assignment pack, and is available for download \href{https://www.hsa.ie/eng/Publications_and_Forms/Publications/Construction/Site_Dumper_and_360_Excavator_Pre-start_Checks.html}{here}.  An image is also shown in Fig \ref{fig:DumperPrestartChecks}
+Administrative tasks can consume considerable resources within organisations.  The documentation requirements within the health and safety domain leads often adds to this administrative overhead.  Automating aspects of administrative works increases efficiency, while at the same time providing opportunities to yield data insights not normally achievable.
 
-\begin{figure}
+
+\section*{Assignment Outline}
+
+The Health and Safety Authority has produced a checklist document that employers can use to gather data from employees before they return to work.  A copy of this form is provided in pdf and Excel format within the asset pack of this assignment.  Given the likelihood that forms like this will be issued to numerous employees, and that they need to be tracked and controlled, it offers a good opportunity for automation.\\
+\\
+In this assignment you will automate the production of partially populated forms for each of the 12 employees listed below.\\
+
+\begin{tabularx}{\textwidth}{ |X|X|X| }
+	\hline
+	Alice Adams & Bob Baker & Carol Clark \\
+	Dan Davis & Erin Evans & Faythe Frank \\
+	Grace Ghosh & Heidi Hills & Ivan Irwin \\
+	John Jones & Kevin Klein & Lisa Lopez \\
+	\hline
+\end{tabularx}
+
+\vspace{0.5cm}
+
+For each of these employees, you are to create an excel version of the form customised with the name of the employee.  To do this, you are required to use batch files and the Python programming language with the \textit{OpenPyXL} package.\\
+
+\section*{Approach}
+
+The creation of the individual Excel files is to be carried out using a Windows batch (.bat) file.  Python can then be used to iterate over each of these files and insert the name of the employee in the correct cell of the file, along with their manager name and workplace address.  The fields to be populated with your programme are indicated in Figure \ref{fig:hsaform}\\
+
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=1.0\linewidth]{./Assignments/img/DumperPrestart.png}
-	\caption{Dumper Prestart Checks}
-	\label{fig:DumperPrestartChecks}
+	\includegraphics[width=0.7\linewidth]{img/HSAForm}
+	\caption{Screenshot of HSA Return to Work Form}
+	\label{fig:hsaform}
 \end{figure}
 
-\section*{Usability}
 
-Your final survey is intended to be deployed on site, for usage checks by drivers.  As such you should consider the following in the design and implementation of your survey:
-\begin{itemize}
-	\item Questions should be short and easy to read
-	\item Responses should be clear and unambiguous
-	\item Where failures are detected by the operator, additional information should be captured
-\end{itemize}
+Once complete, your batch file should consist of about 12 commands, and the Python code should be about 25 lines of code.
 
-\newpage
-\section*{Functionality}
+\section*{Extra Credit Section (+20\%)}
+An additional 20\% will be awarded, subject to an overall maximum of 100\% for creating a Python program that will also copy the excel files, thus negating the need for the batch file.  In order to qualify for the extra credit portion, you must also submit files in accordance with the standard assignment specification. 
 
-The following functionality must be included in your deployment:
-\begin{itemize}
-	\item Driver Name and Employee Number
-	\item Dumper Registration
-	\item All items as per the HSA document
-	\item Appropriate Branching to capture comments on failed checks
-	\item A branch specifically implemented for 'Use on Public Roads'
-	\item A specific multi line input field for group testing feedback.
-\end{itemize}
+\section*{Testing and Marking}
+When marking your work, I will be running the files as submitted.  You should ensure that your batch file and python script(s) have been thoroughly tested before submission.  Code that does not run will score poorly.     
 
-\section*{Testing}
-Testing of your deployment will be done in two stages
-\begin{enumerate}
-	\item Author Testing - You should test your deployment rigorously before proceeding to the next stage
-	\item Group Testing - Your Deployment will be tested by all other members of the class, and you will be expected to test all other deployments.
-\end{enumerate}
-
-
-\newpage
-\section*{Group Testing Feedback}
-Group testing will be implemented to improve your deployment prior to final submission. All feedback is to be:
-\begin{itemize}
-	\item Specific, meaningful \& constructive
-	\item Impersonal
-	\item Process Orientated
-\end{itemize}
 
 \section*{Submission}
-This is a relatively complex submission, that will comprise many parts.  The parts are as follows:
+Your submission should comprise of at least two files as shown below:
 \begin{enumerate}
-	\item Link to Microsoft Form (with a .txt file)
-	\item Screen-shots of the form before group testing, numbered appropriately
-	\item Screen-shots of the form after group testing, numbered appropriately
-	\item Excel file containing all responses, including comments from group testing
+	\item Windows Batch File (.bat)
+	\item Python Script File (.py)
 \end{enumerate}
 
-All parts are to be compressed into a single zip folder compelete with logical sectioning.  The link to the form URL can be included in a simple text file in the submission.
-
+If you choose to submit the extra-credit section, you must also submit all of the standard submission files.\\
+\\
+You do not need to submit the excel files as they will be created by me using your batch file and python file where submitted.\\
+\\
+In any event all parts of your submission are to be uploaded to Teams on or before the submission deadline.
 
 \end{document}

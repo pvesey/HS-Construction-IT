@@ -1,6 +1,6 @@
-\input{./Assignments/HeadMatter.tex}
+\input{./HeadMatter.tex}
 	
-\part*{Assignment 2 (25\%) - Autodesk BIM360}
+\part*{Assignment 2 (33\%) - Microsoft Forms}
 
 \begin{tabularx}{\textwidth}{ |X|X| }
 	\hline
@@ -14,69 +14,69 @@
 \section*{Assignment Outline}
 
 
-In this assignment you will create a BIM360 Field Survey to capture a workplace audit.  The questions that are to be used are taken from \href{https://safetyculture.com/}{https://safetyculture.com/}, iAudior example survey.   Autodesk BIM360 is available at \href{https://docs.b360.autodesk.com/}{https://docs.b360.autodesk.com/}.
+In this assignment you will create an on-line survey to capture the prestart checks undertaken by a site dumper operator.  The platform for the on-line survey is to be Microsoft Forms, which is available through your Office 365 Student Subscription.
 
 
 \section*{Background Information}
 
-In a previous assignment, you created a digital survey using Microsoft Forms.  In this assignment you will also create a survey, but this time the survey will be integrated into Autodesk BIM360 and used in association with a Building Information Model.
-
+The HSA has a published document for Site Dumper Prestart checks.  This document is available in the assignment pack, and is available for download \href{https://www.hsa.ie/eng/Publications_and_Forms/Publications/Construction/Site_Dumper_and_360_Excavator_Pre-start_Checks.html}{here}.  An image is also shown in Fig \ref{fig:DumperPrestartChecks}
 
 \begin{figure}
 	\centering
-	\includegraphics[width=1.0\linewidth]{./Assignments/img/Template.png}
-	\caption{BIM360 Checklist Template}
-	\label{fig:BIM369ChecklistTemplate}
+	\includegraphics[width=1.0\linewidth]{./img/DumperPrestart.png}
+	\caption{Dumper Prestart Checks}
+	\label{fig:DumperPrestartChecks}
 \end{figure}
 
+\section*{Usability}
+
+Your final survey is intended to be deployed on site, for usage checks by drivers.  As such you should consider the following in the design and implementation of your survey:
+\begin{itemize}
+	\item Questions should be short and easy to read
+	\item Responses should be clear and unambiguous
+	\item Where failures are detected by the operator, additional information should be captured
+\end{itemize}
 
 \newpage
-\section*{Layout \& Functionality}
+\section*{Functionality}
 
-The questions for the survey have been provided to you in the asset pack.  You are to implement as shown.  When you are testing the functionality of the survey on a smartphone should ensure that you have at least the following:
-
+The following functionality must be included in your deployment:
 \begin{itemize}
-	\item Photograph attached
-	\item Annotated Photograph attached
-	\item Voice Recognition used
-	\item Issue Created
-	\item Note Created
+	\item Driver Name and Employee Number
+	\item Dumper Registration
+	\item All items as per the HSA document
+	\item Appropriate Branching to capture comments on failed checks
+	\item A branch specifically implemented for 'Use on Public Roads'
+	\item A specific multi line input field for group testing feedback.
 \end{itemize}
 
 \section*{Testing}
-You should ensure that your template is working as anticipated, including the functionality shown above.
+Testing of your deployment will be done in two stages
+\begin{enumerate}
+	\item Author Testing - You should test your deployment rigorously before proceeding to the next stage
+	\item Group Testing - Your Deployment will be tested by all other members of the class, and you will be expected to test all other deployments.
+\end{enumerate}
 
 
 \newpage
-\section*{Checklists (x5)}
-Group testing will not be implemented in this assignment.  Instead, it will be necessary for you to test your survey yourself prior to issuing to 5 of your classmates.  Each student is required to obtain 5 surveys from classmates as part of this assignment.
-
+\section*{Group Testing Feedback}
+Group testing will be implemented to improve your deployment prior to final submission. All feedback is to be:
+\begin{itemize}
+	\item Specific, meaningful \& constructive
+	\item Impersonal
+	\item Process Orientated
+\end{itemize}
 
 \section*{Submission}
 This is a relatively complex submission, that will comprise many parts.  The parts are as follows:
 \begin{enumerate}
-	\item BIM360 Template (hosted on 'Health \& Safety Project' on BIM360)
-	\item 5 Checklists completed by other students using the BIM360 Smartphone App
-	\item 1000 word report on the creation and deployment of the BIM360 survey, including data analysis, app screenshots, and other items as may be required.  This document is to be a fully detailed report submitted in .pdf format only.
+	\item Link to Microsoft Form (with a .txt file)
+	\item Screen-shots of the form before group testing, numbered appropriately
+	\item Screen-shots of the form after group testing, numbered appropriately
+	\item Excel file containing all responses, including comments from group testing
 \end{enumerate}
 
-
-
-\section*{Marking Scheme}
-\begin{table}[h!]
-	\begin{center}
-		\begin{tabular}{p{8cm}  p{2cm} }
-			\toprule
-			\large{Element} & \large{Proportion} \\ 
-			\cmidrule(r){1-1}\cmidrule(lr){2-2}
-			BIM360 Field Template & 60\%\\
-			Survey Deployments (x5) & 20\%\\
-			Final Report & 20\%\\     
-			\\ \bottomrule
-		\end{tabular}
-		\label{tbl:markSchemeAsmt3}
-	\end{center}
-\end{table}
+All parts are to be compressed into a single zip folder compelete with logical sectioning.  The link to the form URL can be included in a simple text file in the submission.
 
 
 \end{document}
