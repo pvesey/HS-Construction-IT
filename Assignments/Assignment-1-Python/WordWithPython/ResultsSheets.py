@@ -1,7 +1,21 @@
 import os, sys  # Standard Python Libraries
-import xlwings as xw  # pip install xlwings
 from docxtpl import DocxTemplate  # pip install docxtpl
 import win32com.client as win32  # pip install pywin32
+from openpyxl import Workbook
+import openpyxl
+
+wb = Workbook()
+
+path = "StudentNames.xlsx"
+ 
+wb = openpyxl.load_workbook(path)
+ 
+xl_sheet = wb.active
+max_row = xl_sheet.max_row
+ 
+# Loop will print all values
+# of first column
+
 
 # -- Documentation:
 # python-docx-template: https://docxtpl.readthedocs.io/en/latest/
@@ -22,36 +36,27 @@ def convert_to_pdf(doc):
 
 
 def main():
-    wb = xw.Book.caller()
-    xl_sheet = wb.sheets["StudentResults"]
-    doc = DocxTemplate("PythonForm.docx")
-    
-    # -- Get values from Excel
-    contexts = xl_sheet.range("A2").options(dict, expand="table", numbers=int).value
+    wb = Workbook()
 
-    for context in contexts:
-        print(context)
-        data = {'StudentName':'This', 'Knumber':' That'}
+    path = "StudentNames.xlsx"
+     
+    wb = openpyxl.load_workbook(path)
+     
+    xl_sheet = wb.active
+    max_row = xl_sheet.max_row
 
-        output_name = f'test_Report_{context}.docx'
+    dictionary = {}
+
+    for row in xl_sheet.rows:
+        doc = DocxTemplate("PythonForm.docx")
+        output_name = f'test_{row[0].value}.docx'
+        dictionary.update({"StudentName" : row[0].value})
+        dictionary.update({"KNumber" : row[1].value})
+        dictionary.update({"Comments" : row[2].value})
+        doc.render(dictionary)
+        doc.save(output_name)  
         print(output_name)
-        doc.render(data)
-        doc.save(output_name)
-
-
-    # -- Convert to PDF [OPTIONAL]
-        #path_to_word_document = os.path.join(os.getcwd(), output_name)
-        #convert_to_pdf(path_to_word_document)    
-
-
-    # -- Render & Save Word Document
-#    output_name = f'test_Report_{context["StudentName"]}.docx'
-#    output_name = f'test_Report_test.docx'
-#    doc.render(context)
-#    doc.save(output_name)
-
-
+        dictionary.clear()
 
 if __name__ == "__main__":
-    xw.Book("StudentNames.xlsx").set_mock_caller()
     main()
